@@ -1,0 +1,97 @@
+﻿<form class="form-inline">
+    <div>
+        <h3 class="panel-heading">All the Tasks Information in Domain</h3>
+    </div>
+    <div class="col-md-12 col-md-11" id="div_secdata">
+        <div>
+            <input type="button" class="btn-primary" value="Create Task" ng-click="createtask()" />
+        </div>
+        <br />
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>CreatedBy</th>
+                        <th>ModifiedBy</th>
+                        <th>Description</th>
+                        <th>CreatedOn</th>
+                        <th>ModifiedOn</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="task in tasks">
+                    <tr class="success">
+                        <td>{{task.name}}</td>
+                        <td>{{task.createdby}}</td>
+                        <td>{{task.modifiedby}}</td>
+                        <td>{{task.description}}
+                        <td>{{task.createdon | date : format : timezone}}</td>
+                        <td>{{task.modifiedon | date : format : timezone}}</td>
+                        <td>{{task.status}}</td>
+                        <td><span class="glyphicon glyphicon-edit btn" ng-click="edittask(task._id.$oid)"></span><span class="glyphicon glyphicon-trash btn" ng-click="deletetask(task._id.$oid)"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="div_addtask" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">Task Name : </div><div class="col-md-7"><input type="text" class="form-control" id="addtask_name" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Created By : </div><div class="col-md-7"><select class="form-control" id="addtask_createdby" multiple="multiple"></select></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Modified By : </div><div class="col-md-7"><select class="form-control" id="addtask_modifiedby" multiple="multiple"></select></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Description : </div><div class="col-md-7"><input type="text" class="form-control" id="addtask_desc" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="addtask_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_newtask_msg" class="text-success"></label>
+        <br />
+    </div>
+    <div id="div_edittask" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">Task Name : </div><div class="col-md-7"><input type="text" class="form-control" id="edittask_name" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Created By : </div><div class="col-md-7"><select class="form-control" id="edittask_createdby" multiple="multiple"></select></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Modified By : </div><div class="col-md-7"><select class="form-control" id="edittask_modifiedby" multiple="multiple"></select></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Description : </div><div class="col-md-7"><input type="text" class="form-control" id="edittask_desc" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="edittask_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_edittask_msg" class="text-success"></label>
+        <br />
+    </div>
+</form>

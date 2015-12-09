@@ -1,0 +1,53 @@
+﻿<form class="form-inline">
+    <div>
+        <h3 class="panel-heading">Profile</h3>
+    </div>
+    <div class="col-md-12 col-md-11" id="div_secdata">
+        <div>
+            <input type="button" class="btn-primary" value="Update User" ng-click="updateuser()" />
+        </div>
+        <br />
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="success"><td>First Name :</td><td>{{user.firstname}}</td></tr>
+                    <tr class="danger"><td>Last Name :</td><td>{{user.lastname}}</td></tr>
+                    <tr class="success"><td>Email :</td><td>{{user.email}}</td></tr>
+                    <tr class="danger"><td>User Type :</td><td>{{user.usertype}}</td></tr>
+                    <tr class="success"><td>Repositories :</td><td>{{user.repositories}}</td></tr>
+                    <tr class="danger"><td>Status :</td><td>{{user.status}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="div_updateuser" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">First Name : </div><div class="col-md-7"><input type="text" class="form-control" id="updateuser_fname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Last Name : </div><div class="col-md-7"><input type="text" class="form-control" id="updateuser_lname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Email : </div><div class="col-md-7"><input type="text" class="form-control" id="updateuser_email" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Password : </div><div class="col-md-7"><input type="password" class="form-control" id="updateuser_password" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_updateuser_msg" class="text-success"></label>
+        <br />
+    </div>
+</form>

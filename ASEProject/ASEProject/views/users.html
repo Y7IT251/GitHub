@@ -1,0 +1,102 @@
+﻿<form class="form-inline">
+    <div>
+        <h3 class="panel-heading">All the Users Information in Domain</h3>
+    </div>
+    <div class="col-md-12 col-md-11" id="div_secdata">
+        <div>
+            <input type="button" class="btn-primary" value="Add User" ng-click="adduser()" />            
+        </div>
+        <br />
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>User Type</th>
+                        <th>Allowed Repositories</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="user in users">
+                    <tr class="success"><td>{{user.firstname}}</td><td>{{user.lastname}}</td><td>{{user.email}}</td><td>{{user.usertype}}<td>{{user.repositories}}</td><td>{{user.status}}</td>
+                    <td><span class="glyphicon glyphicon-edit btn" ng-click="edituser(user._id.$oid)"></span><span class="glyphicon glyphicon-trash btn" ng-click="deleteuser(user._id.$oid)"></span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="div_adduser" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">First Name : </div><div class="col-md-7"><input type="text" class="form-control" id="adduser_fname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Last Name : </div><div class="col-md-7"><input type="text" class="form-control" id="adduser_lname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Email : </div><div class="col-md-7"><input type="text" class="form-control" id="adduser_email" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">User Type : </div><div class="col-md-7"><input type="text" class="form-control" id="adduser_utype" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Allowed Repositoires : </div><div class="col-md-7">
+                <select class="form-control" id="adduser_repos" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="adduser_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_newuser_msg" class="text-success"></label>
+        <br />
+    </div>
+    <div id="div_edituser" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">First Name : </div><div class="col-md-7"><input type="text" class="form-control" id="edituser_fname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Last Name : </div><div class="col-md-7"><input type="text" class="form-control" id="edituser_lname" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Email : </div><div class="col-md-7"><input type="text" class="form-control" id="edituser_email" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">User Type : </div><div class="col-md-7"><input type="text" class="form-control" id="edituser_utype" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Allowed Repositoires : </div><div class="col-md-7">
+                <select class="form-control" id="edituser_repos" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="edituser_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_edituser_msg" class="text-success"></label>
+        <br />
+    </div>
+</form>

@@ -1,0 +1,89 @@
+﻿<form class="form-inline">
+    <div>
+        <h3 class="panel-heading">All the Groups Information in Domain</h3>
+    </div>
+    <div class="col-md-12 col-md-11" id="div_secdata">
+        <div>
+            <input type="button" class="btn-primary" value="Add Group" ng-click="addgroup()" />
+        </div>
+        <br />
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Group Name</th>
+                        <th>Users</th>
+                        <th>Allowed Repositories</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="group in groups">
+                    <tr class="success">
+                        <td>{{group.name}}</td>
+                        <td>{{group.users}}</td>
+                        <td>{{group.repositories}}</td>
+                        <td>{{group.status}}</td>
+                        <td><span class="glyphicon glyphicon-edit btn" ng-click="editgroup(group._id.$oid)"></span><span class="glyphicon glyphicon-trash btn" ng-click="deletegroup(group._id.$oid)"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="div_addgroup" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">Group Name : </div><div class="col-md-7"><input type="text" class="form-control" id="addgroup_name" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Users : </div><div class="col-md-7">
+                <select class="form-control" id="addgroup_users" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Allowed Repositoires : </div><div class="col-md-7">
+                <select class="form-control" id="addgroup_repos" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="addgroup_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_newgroup_msg" class="text-success"></label>
+        <br />
+    </div>
+    <div id="div_editgroup" style="display:none">
+        <div class="row col-md-12">
+            <div class="col-md-4">Group Name : </div><div class="col-md-7"><input type="text" class="form-control" id="editgroup_name" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Users : </div><div class="col-md-7">
+                <select class="form-control" id="editgroup_users" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Allowed Repositoires : </div><div class="col-md-7">
+                <select class="form-control" id="editgroup_repos" multiple="multiple"></select>
+            </div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-4">Status : </div><div class="col-md-7"><input type="text" class="form-control" id="editgroup_status" /></div>
+        </div>
+        <div class="row"></div>
+        <br />
+        <label id="lbl_editgroup_msg" class="text-success"></label>
+        <br />
+    </div>
+</form>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApplication">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <title>Identity and Access Management QRCode Reader</title>
+    <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/angular.js"></script>
+    <script type="text/javascript" src="scripts/angular-route.js"></script>
+    <script type="text/javascript" src="scripts/angular-resource.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap-dialog.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js"></script>
+    <script type="text/javascript" src="scripts/application.js"></script>
+    <script type="text/javascript" src="scripts/customfunctions.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-dialog.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2-bootstrap.css" />
+</head>
+<body style="background-color:burlywood">
+
+    <div class="col-md-12" style="text-align:center; background-color:aquamarine">
+        <h2>Identity and Access Management</h2>
+    </div>
+    <div class="col-md-12"><br /></div>
+    <div class="container col-md-12">
+
+        <div class="col-md-2" id="sidebar">
+            <div class="list-group">
+                <a href="#/" class="list-group-item active" id="a_profile">My Profile</a>
+                <a href="#/users" class="list-group-item" id="a_users">Users</a>
+                <a href="#/groups" class="list-group-item" id="a_groups">Groups</a>
+                <a href="#/tasks" class="list-group-item" id="a_tasks">Tasks</a>
+                <a href="#/repositories" class="list-group-item" id="a_repo">Repositories</a>
+                <a href="index.html" class="list-group-item">Logout</a>
+            </div>
+        </div><!--/span-->
+        <div class="row col-md-10" ng-view>
+                    <!--<div class="col-xs-6 col-lg-4">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div><!--/span-->
+                    <div class="col-xs-6 col-lg-4">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div><!--/span-->
+                    <div class="col-xs-6 col-lg-4">
+                        <h2>Heading</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div><!--/span-->-->
+                </div><!--/row-->
+    </div>
+</body>
+</html>
